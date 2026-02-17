@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # Nginx 反向代理 - 统一入口，端口 8080
+  nginx:
+    build: ./nginx
+    ports:
+      - "8080:8080"
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  # 前端 - Next.js 应用，监听 3000 端口
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # 后端 - Express API 服务，监听 3001 端口
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+# 网络定义
+networks:
+  default:
+    name: portfolio-network
