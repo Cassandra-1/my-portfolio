@@ -1,6 +1,8 @@
 name = "my-portfolio"
 compatibility_date = "2026-02-18"
-pages_build_output_dir = ".next"
 
-[site]
-bucket = ".next"
+[build]
+command = "npm run build"
+
+[build.outputs]
+directory = ".next"
