@@ -1,8 +1,1 @@
-name = "my-portfolio"
 compatibility_date = "2026-02-18"
-
-[build]
-command = "npm run build"
-
-[build.outputs]
-directory = ".next"
