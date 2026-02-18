@@ -1,0 +1,6 @@
+# Cloudflare Pages 配置文件
+# 禁用 Next.js 遥测
+NEXT_TELEMETRY_DISABLED=1
+
+# Node 版本
+NODE_VERSION=18

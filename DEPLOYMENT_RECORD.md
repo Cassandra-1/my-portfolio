@@ -472,12 +472,48 @@ git push -u origin main
 
 ### 验证部署
 
-```bash
-# 测试 Vercel 部署的网站
-curl https://你的项目名.vercel.app
-```
+Vercel 部署成功！
+
+**公网访问地址：**
+- https://my-portfolio-eta-sage-59.vercel.app
+
+把这个链接发给招聘方或放到简历里即可！
+
+---
+
+## 部署到 Cloudflare Pages（免费国内加速）
+
+### 方案说明
+
+Cloudflare Pages 是免费静态网站托管，国内访问速度较快，无需翻墙。
+
+**访问地址示例：**
+- `https://your-project.pages.dev`
+
+### 部署步骤
+
+#### 1. 部署到 Cloudflare Pages
+
+1. 访问 https://pages.cloudflare.com
+2. 用 GitHub 登录
+3. 点击 "Create a project"
+4. 选择 `my-portfolio` 仓库
+5. 配置：
+   - Project name: `my-portfolio`
+   - Production branch: `main`
+   - Build command: `npm run build`
+   - Build output directory: `.next`
+6. 点击 "Save and Deploy"
+
+等待 1-2 分钟，完成后会得到 `*.pages.dev` 域名。
+
+#### 2. 自定义域名（可选）
+
+- 进入项目 Settings -> Custom domains
+- 添加自己的域名
+- 按提示配置 DNS
 
 ---
 
 *文档创建时间: 2026-02-17*
-*最后更新: 2026-02-17*
+*最后更新: 2026-02-18*
