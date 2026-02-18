@@ -1,0 +1,2 @@
+# Cloudflare Pages 配置
+# 告诉 Cloudflare 这是纯静态网站，不需要 Workers 运行时
