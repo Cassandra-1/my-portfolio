@@ -501,11 +501,16 @@ Cloudflare Pages 是免费静态网站托管，国内访问速度较快，无需
 5. 配置：
    - Project name: `my-portfolio`
    - Production branch: `main`
-   - Build command: `npm run build`
-   - Build output directory: `.next`
+   - **Build command**: `npm run build`
+   - **Build output directory**: `out`（注意是 out 不是 .next）
 6. 点击 "Save and Deploy"
 
 等待 1-2 分钟，完成后会得到 `*.pages.dev` 域名。
+
+**重要说明：**
+- Next.js 配置了 `output: "export"` 后，静态文件会导出到 `out` 目录
+- 不是 `.next` 目录（那是 Next.js 默认的 SSR 输出）！
+- 这就是为什么之前一直失败的原因
 
 #### 2. 自定义域名（可选）
 
